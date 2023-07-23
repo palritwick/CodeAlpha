@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume Generator</title>
+</head>
+
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <p class="text-center my-1">By <span>Ritwick Pal</span></p>
+        <hr>
+        <div class="row">
+            <div class="col md-6">
+                <h3>Personal Information</h3>
+                <div class="form-group mt-2">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter Here">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="email">Your Email</label>
+                    <input type="text" id="email" class="form-control" placeholder="Enter Here">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="phone">Your Phone No.</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Enter Here">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="address">Your Address</label>
+                    <textarea type="text" id="address" class="form-control" placeholder="Enter Here">
+                        </textarea>
+                </div>
+                <p class="text-secondary my-2" id="links">Important Links</p>
+                <div class="form-group mt-2">
+                    <input type="text" id="linkLI" class="form-control" placeholder="LinkedIn">
+                </div>
+                <div class="form-group mt-2">
+                    <input type="text" id="linkTW" class="form-control" placeholder="Twitter">
+                </div>
+                <div class="form-group mt-2">
+                    <input type="text" id="linkFB" class="form-control" placeholder="Facebook/Instagram">
+                </div>
+
+            </div>
+
+            <div class="col md-6">
+                <h3>Professional Information</h3>
+                <div class="form-group mt-2">
+                    <label for="obj">Objective</label>
+                    <textarea type="text" id="objective" class="form-control obj" placeholder="Enter Here">
+                        </textarea>
+                </div>
+
+                <div class="form-group mt-2" id="Exp">
+                    <label for="address">Experiences</label>
+                    <textarea type="text" class="form-control exp" placeholder="Enter Here">
+                        </textarea>
+                    <!-- new textarea -->
+                    <div class="container text-center" id="weAddButton">
+                        <button onclick="addNewExp()" class="btn btn-primary btn-sm my-2">Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="AQ">
+                    <label for="edu">Academic Qualification</label>
+                    <textarea type="text" class="form-control edu" placeholder="Enter Here">
+                        </textarea>
+                    <!-- new textarea -->
+                    <div class="container text-center" id="aqAddButton">
+                        <button onclick="addNewEQ()" class="btn btn-primary btn-sm my-2">Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="projects">
+                    <label for="projects">Projects</label>
+                    <textarea type="text" class="form-control projects" placeholder="Enter Here">
+                        </textarea>
+                    <!-- new textarea -->
+                    <div class="container text-center" id="proAddButton">
+                        <button onclick="addNewProject()" class="btn btn-primary btn-sm my-2">Add</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container text-center">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+    </div>
+
+
+    <!-- CV Template -->
+    <div class="container" id="cv-template">
+        <div class="row">
+            <div class="col-md-4 p-4 background">
+                <!-- first col -->
+                <img src="https://campussafetyconference.com/wp-content/uploads/2020/08/iStock-476085198.jpg" alt=""
+                    class="img-fluid myimg">
+                <div class="container">
+                    <p id="nameT1">Ritwick Pal</p>
+                    <p id="emailT">ritwickpal@gmail.com</p>
+                    <p id="phoneT">+91-9039532746</p>
+                    <p id="addressT">NEWTOWN, ACTION AREA III, KOLKATA 700160</p>
+
+                    <a id="linkedT" href="https://www.linkedin.com/in/ritwick-pal-40593024b/">LinkedIn</a><br>
+                    <a id="twitT" href="https:/www.twitter.com/abc">Twitter</a><br>
+                    <a id="fbT" href="https://www.facebook.com/profile.php?id=100085974039994">Facebook</a><br>
+                </div>
+            </div>
+            <div class="col-md-8 py-5">
+                <!-- second col -->
+                <h1 class="text-center" id="nameT2" style="font-weight: 980;">RITWICK PAL</h1>
+                <!-- Objective Card  -->
+                <div class="card my-3">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <card class="body p-3" id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Nobis, doloremque
+                        explicabo dignissimos odio expedita nisi sed saepe? Dolore reiciendis nisi voluptatem, magnam
+                        cumque beatae dolorem soluta dignissimos quia at eius laboriosam quo excepturi facilis minus
+                        expedita et. Quibusdam dicta magnam harum omnis neque consequuntur nam.</card>
+                </div>
+                <div class="card my-3">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body" id="weT">
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, reprehenderit.</li>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, corporis.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, dolores.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card my-3">
+                    <div class="card-header background">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body" id="aqT">
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, reprehenderit.</li>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, corporis.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, dolores.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card my-3">
+                    <div class="card-header background">
+                        <h3>Projects</h3>
+                    </div>
+                    <div class="card-body" id="proT">
+                        <ol>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, reprehenderit.</li>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, corporis.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, dolores.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn background">Print CV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
