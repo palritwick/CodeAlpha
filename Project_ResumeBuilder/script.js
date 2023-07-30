@@ -49,7 +49,7 @@ function generateCV(){
     document.getElementById('emailT').innerHTML = document.getElementById('email').value;
     document.getElementById('phoneT').innerHTML = document.getElementById('phone').value;
     document.getElementById('addressT').innerHTML = document.getElementById('address').value;
-    document.getElementById('linkedT').innerHTML = document.getElementById('linkLI').value;
+    // document.getElementById('linkedT').innerHTML = document.getElementById('linkLI').value;
 
     // Objective
     document.getElementById('objectiveT').innerHTML = document.getElementById('objective').value;
